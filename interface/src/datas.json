@@ -1,0 +1,79 @@
+{
+    "users": {
+        "antoniol": {
+            "name": "Antonio Lopez",
+            "rol": "admin",
+            "rooms": {
+                "SalaProblemasG1": true,
+                "SalaProblemasG2": false
+            }
+        },
+        "carlosh": {
+            "name": "Carlos Hernandez",
+            "rol": "student",
+            "rooms": {
+                "SalaProblemasG1": false,
+                "SalaProblemasG2": true
+            }
+        }
+    },
+
+    "history": {
+        "antoniol": "Sala - problema - instancia",
+        "carlosh": {}
+    },
+
+    "rooms": {
+        "SalaProblemasG1": {
+            "name": "Sala de problemas Grupo 1",
+            "members": {
+                "Antonio": true,
+                "Carlos": true,
+                "Alberto": false
+            },
+            "problems": {
+                "problema1": true,
+                "problema2": false
+            }
+        },
+        "SalaProblemasG2": {
+            "name": "Sala de problemas Grupo 2",
+            "members": {
+                "Antonio": false,
+                "Carlos": true,
+                "Alberto": false
+            }
+        }
+    },
+
+    "problems": {
+        "problem1": {
+            "name": "Problema numero 1",
+            "definition": {
+                "code": "codigo ejemplo"
+            },
+            "inst": {
+
+            },
+            "rooms": {
+                "SalaProblemasG1": true,
+                "SalaProblemasG2": false
+            }
+        },
+        "problema2": {
+            "name": "Problema numero 2",
+            "definition": {
+                "code": "codigo ejemplo"
+            },
+            "rooms": {
+                "SalaProblemasG1": false,
+                "SalaProblemasG2": true
+            }
+        }
+    },
+    "def": "MEM: [40] 2 4 3 5 3 19 28",
+    "instancias": "DropMenu para instancias (Alumnos: resolver instancias por ordende eleccion)",
+    "Definicion": "richEditor - Comprobar con firebase",
+    "control": "controlar la configuracion superescalar",
+    "member": "memberlist"
+}

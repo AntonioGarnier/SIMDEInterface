@@ -1,0 +1,3 @@
+export const USER_LOGGED = 'USER_LOGGED'
+export const HEADER_BAR_TITLE = 'SIMDE CONTROL PANEL'
+

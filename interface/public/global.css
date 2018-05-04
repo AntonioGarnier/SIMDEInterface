@@ -1,0 +1,25 @@
+html, body {
+    margin: 0px;
+    height: 100%;
+}
+
+#root {
+    margin: 0px;
+    height: 100%;
+}
+
+.fullScreen {
+    margin: 0px;
+    height: 100%;
+}
+
+
+.loginFull {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e2dddd;
+    margin: 0px;
+    height: 100%;
+}
+

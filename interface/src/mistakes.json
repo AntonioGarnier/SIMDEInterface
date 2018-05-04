@@ -1,0 +1,4 @@
+{
+    "error1": "Especificar numero de lineas de fichero, con menos lineas lo traga, si pones un numero mayor, peta",
+    "error2": "No se pueden modificar los registros de memoria"
+}
