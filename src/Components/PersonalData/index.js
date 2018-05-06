@@ -100,7 +100,6 @@ const PersonalData = ({ user }) => {
                 </Paper>
             </div>
         </div>
-        // <RichEditor />
     )
 }
 

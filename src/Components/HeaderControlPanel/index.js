@@ -1,16 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Switch, Route, Redirect, Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
 import IconButton from 'material-ui/IconButton'
 import AppBar from 'material-ui/AppBar'
 import Avatar from 'material-ui/Avatar'
 import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new'
-import auth from '../FirebaseProvider'
 import { HEADER_BAR_TITLE } from '../../Constants'
-import { removeState } from '../../Store/LocalStorage'
+import { logout } from '../../Actions'
 import './style.css'
 
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        logout,
+    }, dispatch)
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -21,16 +26,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-const handleLogOut = async () => {
-    try {
-        await auth.signOut()
-        removeState()
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 const HeaderControlPanel = ({
+    logout,
     user,
     handleOnMenuClick,
 }) => {
@@ -43,15 +40,12 @@ const HeaderControlPanel = ({
             iconElementRight={
                 <div style={{ display: 'flex', alignItems: 'center', color: 'white' }} >
                     <Avatar style={{ marginRight: '20px' }} src={user.picture} />
-                    {user.displayName}
-                    <Link to="/" >
-                        <IconButton
-                            style={{ marginLeft: '20px' }}
-                            onClick={handleLogOut}
-                        >
-                            <ActionPowerSettingsNew color="white" />
-                        </IconButton>
-                    </Link>
+                    <IconButton
+                        style={{ marginLeft: '20px' }}
+                        onClick={logout}
+                    >
+                        <ActionPowerSettingsNew color="white" />
+                    </IconButton>
                 </div>
             }
         />
@@ -64,6 +58,7 @@ HeaderControlPanel.propTypes = {
         picture: PropTypes.string.isRequired,
     }).isRequired,
     handleOnMenuClick: PropTypes.func.isRequired,
+    logout: PropTypes.func.isRequired,
 }
 
-export default connect(mapStateToProps)(HeaderControlPanel)
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderControlPanel)

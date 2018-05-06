@@ -1,3 +1,7 @@
-export const USER_LOGGED = 'USER_LOGGED'
+// Action types
+export const USER_LOGIN = 'USER_LOGIN'
+export const USER_LOGOUT = 'USER_LOGOUT'
+
+// Other constants
 export const HEADER_BAR_TITLE = 'SIMDE CONTROL PANEL'
 

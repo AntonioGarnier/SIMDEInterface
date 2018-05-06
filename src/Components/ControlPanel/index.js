@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import HeaderControlPanel from '../HeaderControlPanel'
 import AdminSideBar from '../Elements/AdminSideBar'
 import PersonalData from '../PersonalData'
-import firebase from '../FirebaseProvider/firebase'
+import { SideNavRoutes } from '../../Routes'
+
 
 class ControlPanel extends Component {
     state = {
@@ -26,7 +27,6 @@ class ControlPanel extends Component {
             contentStyle.marginLeft = '250px'
         else
             contentStyle.marginLeft = '0px'
-        if (!firebase.auth().currentUser) return <Redirect to="/" />
         return (
             <div>
                 <HeaderControlPanel
@@ -37,7 +37,7 @@ class ControlPanel extends Component {
                     handleOnMenuClick={this.handleOnMenuClick}
                 />
                 <div style={contentStyle} >
-                    <PersonalData />
+                    <SideNavRoutes />
                 </div>
             </div>
         )

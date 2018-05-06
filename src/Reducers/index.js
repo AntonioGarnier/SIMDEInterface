@@ -1,4 +1,7 @@
-import { USER_LOGGED } from '../Constants'
+import {
+    USER_LOGIN,
+    USER_LOGOUT,
+} from '../Constants'
 
 
 export const initialState = {
@@ -7,8 +10,10 @@ export const initialState = {
 
 export const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case USER_LOGGED:
+        case USER_LOGIN:
             return { ...state, user: action.payload }
+        case USER_LOGOUT:
+            return { initialState }
         default:
             return state
     }
