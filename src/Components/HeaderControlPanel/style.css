@@ -15,3 +15,8 @@
 .marginLeftInfo {
     margin-left: '20px'
 }
+
+.noFormatText {
+    text-decoration: none;
+    color: white
+}

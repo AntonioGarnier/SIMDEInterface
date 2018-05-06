@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import HeaderControlPanel from '../HeaderControlPanel'
 import AdminSideBar from '../Elements/AdminSideBar'
-import PersonalData from '../PersonalData'
-import { SideNavRoutes } from '../../Routes'
 
 
 class ControlPanel extends Component {
+    static propTypes = {
+        children: PropTypes.any.isRequired,
+    }
+
     state = {
         sideBarOpen: false,
     }
@@ -37,7 +39,7 @@ class ControlPanel extends Component {
                     handleOnMenuClick={this.handleOnMenuClick}
                 />
                 <div style={contentStyle} >
-                    <SideNavRoutes />
+                    {this.props.children}
                 </div>
             </div>
         )

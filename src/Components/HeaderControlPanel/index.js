@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 import IconButton from 'material-ui/IconButton'
 import AppBar from 'material-ui/AppBar'
 import Avatar from 'material-ui/Avatar'
@@ -33,7 +34,7 @@ const HeaderControlPanel = ({
 }) => {
     return (
         <AppBar
-            title={HEADER_BAR_TITLE}
+            title={<Link to="/" className="noFormatText" >{HEADER_BAR_TITLE}</Link>}
             style={{ position: 'fixed', top: '0px' }}
             showMenuIconButton
             onLeftIconButtonClick={handleOnMenuClick}

@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
 import AppBar from 'material-ui/AppBar'
-import { List, ListItem } from 'material-ui/List'
+import { Menu, MenuItem } from 'material-ui/Menu'
 import Person from 'material-ui/svg-icons/social/person'
 import Info from 'material-ui/svg-icons/action/info'
 import FormatListBulleted from 'material-ui/svg-icons/editor/format-list-bulleted'
 import PlayListAdd from 'material-ui/svg-icons/av/playlist-add'
+import './style.css'
 
 
 const AdminSideBar = (props) => {
@@ -33,38 +35,44 @@ const AdminSideBar = (props) => {
                 onLeftIconButtonClick={props.handleOnMenuClick}
                 style={{ height: '64px' }}
             />
-            <List>
-                <ListItem
-                    primaryText="Personal data"
-                    leftIcon={<Person />}
-                    onClick={() => console.log('Informacion Personal del usuario logeado')}
-                />
-                <ListItem
-                    primaryText="Problem List"
-                    leftIcon={<FormatListBulleted />}
-                    onClick={() => console.log('Lista de problemas, si no hay problemas, boton a crear problema')}
-                />
-                <ListItem
-                    primaryText="Room List"
-                    leftIcon={<FormatListBulleted />}
-                    onClick={() => console.log('Lista de salas, si no hay salas, boton a crear sala')}
-                />
-                <ListItem
-                    primaryText="Create Problem"
-                    leftIcon={<PlayListAdd />}
-                    onClick={() => console.log('Crear problemas')}
-                />
-                <ListItem
-                    primaryText="Create Room"
-                    leftIcon={<PlayListAdd />}
-                    onClick={() => console.log('Crear salas')}
-                />
-                <ListItem
-                    primaryText="About"
-                    leftIcon={<Info />}
-                    onClick={() => console.log('Informacion sobre la interfaz')}
-                />
-            </List>
+            <Menu>
+                <NavLink to="/personalData" className="showUnderline">
+                    <MenuItem
+                        primaryText="Personal Data"
+                        leftIcon={<Person />}
+                    />
+                </NavLink>
+                <NavLink to="/problemList" className="showUnderline">
+                    <MenuItem
+                        primaryText="Problem List"
+                        leftIcon={<FormatListBulleted />}
+                    />
+                </NavLink>
+                <NavLink to="/roomList" className="showUnderline">
+                    <MenuItem
+                        primaryText="Room List"
+                        leftIcon={<FormatListBulleted />}
+                    />
+                </NavLink>
+                <NavLink to="/createProblem" className="showUnderline">
+                    <MenuItem
+                        primaryText="Create Problem"
+                        leftIcon={<PlayListAdd />}
+                    />
+                </NavLink>
+                <NavLink to="/createRoom" className="showUnderline">
+                    <MenuItem
+                        primaryText="Create Room"
+                        leftIcon={<PlayListAdd />}
+                    />
+                </NavLink>
+                <NavLink to="/about" className="showUnderline">
+                    <MenuItem
+                        primaryText="About"
+                        leftIcon={<Info />}
+                    />
+                </NavLink>
+            </Menu>
         </Drawer>
     )
 }
