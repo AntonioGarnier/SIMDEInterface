@@ -8,13 +8,17 @@ import AppBar from 'material-ui/AppBar'
 import Avatar from 'material-ui/Avatar'
 import ActionPowerSettingsNew from 'material-ui/svg-icons/action/power-settings-new'
 import { HEADER_BAR_TITLE } from '../../Constants'
-import { logout } from '../../Actions'
+import {
+    logout,
+    openSideBar,
+} from '../../Actions'
 import './style.css'
 
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
         logout,
+        openSideBar,
     }, dispatch)
 }
 
@@ -27,23 +31,19 @@ const mapStateToProps = (state) => {
     }
 }
 
-const HeaderControlPanel = ({
-    logout,
-    user,
-    handleOnMenuClick,
-}) => {
+const HeaderControlPanel = (props) => {
     return (
         <AppBar
             title={<Link to="/" className="noFormatText" >{HEADER_BAR_TITLE}</Link>}
             style={{ position: 'fixed', top: '0px' }}
             showMenuIconButton
-            onLeftIconButtonClick={handleOnMenuClick}
+            onLeftIconButtonClick={props.openSideBar}
             iconElementRight={
                 <div style={{ display: 'flex', alignItems: 'center', color: 'white' }} >
-                    <Avatar style={{ marginRight: '20px' }} src={user.picture} />
+                    <Avatar style={{ marginRight: '20px' }} src={props.user.picture} />
                     <IconButton
                         style={{ marginLeft: '20px' }}
-                        onClick={logout}
+                        onClick={props.logout}
                     >
                         <ActionPowerSettingsNew color="white" />
                     </IconButton>
@@ -58,8 +58,8 @@ HeaderControlPanel.propTypes = {
         displayName: PropTypes.string.isRequired,
         picture: PropTypes.string.isRequired,
     }).isRequired,
-    handleOnMenuClick: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired,
+    openSideBar: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderControlPanel)

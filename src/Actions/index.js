@@ -1,8 +1,10 @@
-import auth from '../Components/FirebaseProvider'
+import { signIn, signOut } from '../Components/FirebaseProvider'
 import { removeState } from '../Store/LocalStorage'
 import {
     USER_LOGIN,
     USER_LOGOUT,
+    OPEN_SIDE_BAR,
+    CLOSE_SIDE_BAR,
 } from '../Constants'
 
 
@@ -21,7 +23,8 @@ export function logingOut() {
 
 export function login() {
     return () => {
-        auth.signIn()
+        const user = signIn()
+        console.log(user)
     }
 }
 
@@ -29,6 +32,20 @@ export function logout() {
     return (dispatch) => {
         dispatch(logingOut())
         removeState()
-        auth.signOut()
+        signOut()
+    }
+}
+
+export function openSideBar() {
+    return {
+        type: OPEN_SIDE_BAR,
+        payload: true,
+    }
+}
+
+export function closeSideBar() {
+    return {
+        type: CLOSE_SIDE_BAR,
+        payload: false,
     }
 }

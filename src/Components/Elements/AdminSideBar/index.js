@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { NavLink } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
 import AppBar from 'material-ui/AppBar'
@@ -8,31 +10,33 @@ import Person from 'material-ui/svg-icons/social/person'
 import Info from 'material-ui/svg-icons/action/info'
 import FormatListBulleted from 'material-ui/svg-icons/editor/format-list-bulleted'
 import PlayListAdd from 'material-ui/svg-icons/av/playlist-add'
+import { closeSideBar } from '../../../Actions'
 import './style.css'
 
 
-const AdminSideBar = (props) => {
-    const contentStyle = {
-        transition: 'margin-left 450ms cubic-bezier(0.23, 1, 0.32, 1)',
-        marginLeft: '0px',
-        padding: '5%',
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        closeSideBar,
+    }, dispatch)
+}
+
+const mapStateToProps = (state) => {
+    return {
+        toggleSideBar: state.toggleSideBar,
     }
+}
 
-    if (props.open)
-        contentStyle.marginLeft = '250px'
-    else
-        contentStyle.marginLeft = '0px'
-
+const AdminSideBar = (props) => {
     return (
         <Drawer
-            open={props.open}
+            open={props.toggleSideBar}
             zDepth={0}
             docked
         >
             <AppBar
                 title="Options"
                 showMenuIconButton
-                onLeftIconButtonClick={props.handleOnMenuClick}
+                onLeftIconButtonClick={props.closeSideBar}
                 style={{ height: '64px' }}
             />
             <Menu>
@@ -78,8 +82,9 @@ const AdminSideBar = (props) => {
 }
 
 AdminSideBar.propTypes = {
-    open: PropTypes.bool.isRequired,
-    handleOnMenuClick: PropTypes.func.isRequired,
+    toggleSideBar: PropTypes.bool.isRequired,
+    closeSideBar: PropTypes.func.isRequired,
 }
 
-export default AdminSideBar
+export default connect(mapStateToProps, mapDispatchToProps)(AdminSideBar)
+

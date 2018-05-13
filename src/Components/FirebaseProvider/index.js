@@ -1,5 +1,2 @@
-import * as auth from './auth'
-
-
-export default auth
-
+export { default as firebase } from './firebase'
+export * from './auth'

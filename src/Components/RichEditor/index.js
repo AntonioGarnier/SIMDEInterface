@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactQuill from 'react-quill'
-import './../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 
+
+const initialValue = '<a href="https://khan.github.io/KaTeX/function-support.html">Como usar las formulas</a>'
 
 class RichEditor extends Component {
     static propTypes = {
@@ -12,14 +13,16 @@ class RichEditor extends Component {
     }
 
     state = {
-        text: '',
+        text: initialValue,
         showToolbar: {
+            formula: true,
+            syntax: true,
             toolbar: [
                 ['bold', 'italic', 'underline', 'strike'],
                 [{ header: [1, 2, 3, false] }],
                 [{ align: [] }],
                 [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
-                ['blockquote', 'code-block'],
+                ['blockquote', 'code-block', 'formula'],
                 ['link'],
                 [{ color: [] }, { background: [] }],
                 [{ script: 'sub' }, { script: 'super' }],
