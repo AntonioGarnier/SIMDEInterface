@@ -5,7 +5,7 @@ import { rootReducer } from '../Reducers'
 import { saveState, loadState } from './LocalStorage'
 
 
-const initialState = loadState() || { user: null }
+const initialState = loadState() || { user: null, toggleSideBar: false }
 // console.log('InitialState:')
 // console.log(initialState)
 

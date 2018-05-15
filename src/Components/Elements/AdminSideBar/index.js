@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { NavLink } from 'react-router-dom'
 import Drawer from 'material-ui/Drawer'
 import AppBar from 'material-ui/AppBar'
+import MenuList from '@material-ui/core/MenuList'
 import { Menu, MenuItem } from 'material-ui/Menu'
 import Person from 'material-ui/svg-icons/social/person'
 import Info from 'material-ui/svg-icons/action/info'
@@ -26,6 +27,15 @@ const mapStateToProps = (state) => {
     }
 }
 
+this.handleMenuClick = (e) => {
+    console.log(e.target)
+    // e.target.className = 'actives arrowRight'
+}
+
+this.handleMenuFocus = () => {
+    console.log('***********')
+}
+
 const AdminSideBar = (props) => {
     return (
         <Drawer
@@ -33,48 +43,61 @@ const AdminSideBar = (props) => {
             zDepth={0}
             docked
         >
+            {console.log(props)}
             <AppBar
                 title="Options"
                 showMenuIconButton
                 onLeftIconButtonClick={props.closeSideBar}
                 style={{ height: '64px' }}
             />
-            <Menu>
-                <NavLink to="/personalData" className="showUnderline">
+            <Menu selectedMenuItemStyle="actives arrowRight" >
+                <NavLink to="/personalData" className="showUnderline" >
                     <MenuItem
-                        primaryText="Personal Data"
+                        onClick={e => this.handleMenuClick(e)}
                         leftIcon={<Person />}
-                    />
+                    >
+                    Personal Data
+                    </MenuItem>
                 </NavLink>
                 <NavLink to="/problemList" className="showUnderline">
                     <MenuItem
-                        primaryText="Problem List"
+                        onClick={e => this.handleMenuClick(e)}
                         leftIcon={<FormatListBulleted />}
-                    />
+                    >
+                    Problem List
+                    </MenuItem>
                 </NavLink>
                 <NavLink to="/roomList" className="showUnderline">
                     <MenuItem
-                        primaryText="Room List"
+                        onClick={e => this.handleMenuClick(e)}
                         leftIcon={<FormatListBulleted />}
-                    />
+                    >
+                    Room List
+                    </MenuItem>
                 </NavLink>
                 <NavLink to="/createProblem" className="showUnderline">
                     <MenuItem
-                        primaryText="Create Problem"
+                        onClick={e => this.handleMenuClick(e)}
                         leftIcon={<PlayListAdd />}
-                    />
+                    >
+                    Create Problem
+                    </MenuItem>
                 </NavLink>
                 <NavLink to="/createRoom" className="showUnderline">
                     <MenuItem
-                        primaryText="Create Room"
+                        onClick={e => this.handleMenuClick(e)}
                         leftIcon={<PlayListAdd />}
-                    />
+                    >
+                    Create Room
+                    </MenuItem>
                 </NavLink>
                 <NavLink to="/about" className="showUnderline">
                     <MenuItem
-                        primaryText="About"
+                        onClick={e => this.handleMenuClick(e)}
                         leftIcon={<Info />}
-                    />
+                    >
+                    About
+                    </MenuItem>
                 </NavLink>
             </Menu>
         </Drawer>

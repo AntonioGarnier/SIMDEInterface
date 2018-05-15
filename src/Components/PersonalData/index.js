@@ -45,56 +45,14 @@ const PersonalData = ({ user }) => {
                         <ListItem primaryText="Room 1" leftIcon={<Remove />} />
                         <ListItem primaryText="Room 2" leftIcon={<Remove />} />
                         <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
-                        <ListItem primaryText="Room 3" leftIcon={<Remove />} />
                     </List>
                 </Paper>
                 <Paper className="listStyle" >
                     <List>
                         <Subheader style={{ color: 'white', backgroundColor: '#a57ca5' }} >Groups</Subheader>
                         <Divider />
-                        <ListItem primaryText="Group 1" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
-                        <ListItem primaryText="Group 2" leftIcon={<Remove />} />
+                        <ListItem primaryText="Group de Mañana" leftIcon={<Remove />} />
+                        <ListItem primaryText="Group de Tarde" leftIcon={<Remove />} />
                         <ListItem primaryText="Group 2" leftIcon={<Remove />} />
                     </List>
                 </Paper>

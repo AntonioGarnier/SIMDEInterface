@@ -8,6 +8,7 @@ import {
 
 export const initialState = {
     user: null,
+    toggleSideBar: false,
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -15,7 +16,7 @@ export const rootReducer = (state = initialState, action) => {
         case USER_LOGIN:
             return { ...state, user: action.payload }
         case USER_LOGOUT:
-            return { initialState }
+            return initialState
         case OPEN_SIDE_BAR:
             return { ...state, toggleSideBar: action.payload }
         case CLOSE_SIDE_BAR:
