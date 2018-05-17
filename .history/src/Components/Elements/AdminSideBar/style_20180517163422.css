@@ -1,0 +1,18 @@
+.active {
+    display: block;
+    background: rgb(236, 221, 236);
+    .arrowRight:before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 241px;
+        border-width: 15px;
+        border-style: solid;
+        border-color: transparent transparent transparent #793b79;
+    }
+}
+
+
+.showUnderline {
+    text-decoration: none;
+}

@@ -1,0 +1,33 @@
+.active {
+    display: block;
+    background: rgb(236, 221, 236);
+    border-width: 100px;
+    border-right-style: solid;
+    border-top-width: 100;
+}
+
+.arrowRight:before, .arrowRight:after {
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+    top:-1px;
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    }
+    .arrowRight:after {
+    border-left: 16px solid #d1d1d1;
+    right: -15px;
+    z-index: 2;
+    }
+
+   .arrowRight:before {
+    border-left: 16px solid #999;
+    right: -16px;
+    z-index: 1;
+    }
+
+.showUnderline {
+    text-decoration: none;
+}
